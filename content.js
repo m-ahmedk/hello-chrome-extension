@@ -1,10 +1,7 @@
 (() => {
     const hostname = window.location.hostname.replace(/^www\./, "");
-    console.log(hostname)
-
     const today = new Date().toISOString().split("T")[0];
     const storageKey = `shown_${hostname}`;
-
 
     chrome.storage.local.get([storageKey], (result) => {
         if (result[storageKey] === today) {
