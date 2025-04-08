@@ -1,14 +1,21 @@
 {
     "manifest_version": 3,
     "name": "Hello World Extension",
-    "version": "1.0",
-    "description": "Shows a Hello World dialog on page load",
+    "version": "1.1",
+    "description": "Shows a Fancy Hello World dialog once a day on page load",
+    "icons": {
+      "128": "hello-logo.png"
+    },
+    "action": {
+      "default_title": "Hello World Extension"
+    },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
         "js": ["content.js"],
+        "css": ["styles.css"],
         "run_at": "document_idle"
       }
     ],
-    "permissions": []
+    "permissions": ["storage"]
   }
